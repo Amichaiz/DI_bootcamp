@@ -1,0 +1,22 @@
+.gr{
+    background-color: grey;
+    height: 100px;
+    width: 100%;
+    position: relative;
+}
+.bl{
+    background-color: rgb(25, 82, 189);
+    height: 89px;
+    width: 10%;
+    position: absolute;
+    top: 11px;
+    left: 12px;
+}
+.ye{
+    background-color: rgb(206, 203, 32);
+    height: 89px;
+    width: 10%;
+    position: absolute;
+    top: 15px;
+    left: 17px;    
+}

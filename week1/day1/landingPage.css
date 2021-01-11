@@ -1,0 +1,40 @@
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://i.pinimg.com/originals/1e/be/88/1ebe8835f351626ed698a58f8ec2e669.jpg");
+
+  /* Full height */
+  height: 60%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#tl{
+	margin-left: 300px;
+	
+
+}
+#tr{
+	margin-left: 700px;
+	
+
+}
+h1 {
+	font-size:250; 
+  position: relative;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
