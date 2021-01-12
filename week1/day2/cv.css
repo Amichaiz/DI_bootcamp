@@ -30,4 +30,5 @@ body{
 }
 .pa{
     font-family: 'Inter', sans-serif;
+    display: inline-block;
 }

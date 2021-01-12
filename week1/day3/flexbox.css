@@ -1,0 +1,32 @@
+.all{
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid red;
+    align-items: center;
+    /*align-items: flex-end;*/
+    /*justify-content: space-between;*/
+    /*align-content: stretch;*/
+    height: 100%;
+    
+
+}
+.box1{
+    width: 80%;
+    background-color: rgb(139, 255, 255);
+    height: 35px;
+}
+.box2{
+    width: 100%;
+    background-color: rgb(139, 255, 255);
+    height: 35px;
+    margin: 5px;
+
+}
+.box3{
+    width: 80%;
+    background-color:  rgb(139, 255, 255);
+    height: 35px;
+    
+}
