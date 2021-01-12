@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flecbox</title>
+    <style>
+    
+        .yb{
+            border:2px solid black;
+            height: 75px;
+            width: 75px;
+            background-color: yellow;
+            margin: 5px;
+        }
+        .container{
+            display:flex;
+            border: 1px solid black;
+        }
+        .lb{
+            display: flex;
+            flex-direction: column;
+           /* justify-content: flex-start;*/
+        }
+        .cb{
+            display: flex;
+            /*justify-content: center;*/
+            align-items: center;
+            /*cant get it to do space between*/
+            justify-content: space-between;
+            margin: 65px;
+            padding: 50px;
+            flex-wrap: nowrap;
+        }
+        .rb{
+            display: flex;
+            flex-direction: column;
+            /*they dont move it to the end
+            align-items: flex-end;
+            justify-content: flex-end;*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <div class="lb">
+        <div class="yb"></div>
+        <div class="yb"></div>
+        <div class="yb"></div>
+        <div class="yb"></div>
+    </div>
+    <div class="cb">
+        <div class="yb"></div>
+        <div class="yb"></div>
+        <div class="yb"></div>
+        <div class="yb"></div>
+    </div>
+    <div class="rb">
+        <div class="yb"></div>
+        <div class="yb"></div>
+        <div class="yb"></div>
+        <div class="yb"></div>
+    </div>
+    </div>
+</body>
+
+</html>
