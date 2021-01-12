@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            background: url('https://www.muralswallpaper.com/app/uploads/turquoise-abstract-watercolour-world-map-wallpaper-mural-Plain.jpg');
+            background-size: cover;
+            /*background-repeat: no-repeat;*/
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        /* Smartphone Portrait and Landscape 
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+            .container {
+                display: inline;
+            }*/
+
+        .p1 {
+            text-align: center;
+        }
+
+        h2 {
+            color: rgb(96, 150, 250);
+            font-family: 'Yusei Magic', sans-serif;
+            font-size: 25px;
+        }
+
+        h3 {
+            font-family: 'Yusei Magic', sans-serif;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+        .container2 {
+            height: 600px;
+            display: grid;
+            border: 1px solid black;
+            grid-gap: 30px;
+            text-align: center;
+            grid-template-areas:
+                'a g e'
+                'a c e'
+                'b c f'
+                'g d g';
+                
+            grid-template-rows:1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+        }/*
+        .container2{
+            display: flex;
+            justify-content: space-around;
+            
+        }*/
+        .box1 {
+            
+            grid-area: a;
+        }
+
+        .box2 {
+            background-color: rgb(255, 196, 129);
+            grid-area: b;
+        }
+
+        .box3 {
+            grid-area: c;
+        }
+
+        .box4 {
+            background-color: rgb(95, 159, 243);
+            grid-area: d;
+        }
+
+        .box5 {
+            grid-area: e;
+        }
+
+        .box6 {
+            background-color: rgb(69, 214, 171);
+            grid-area: f;
+        }
+
+        .empty {
+            grid-area: g;
+        }
+        .box{
+            border:1px solid rgb(255, 255, 255);
+            background-color: rgb(255, 255, 255);
+            margin: 10;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header" style="font-family: 'Yusei Magic', sans-serif;">Shopify powers ambitious entrepreneurs all
+        <br>over the world
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="p1">
+            <h2>500,000</h2>
+            <h3>Buinesses powered by shopify</h3>
+        </div>
+        <div class="p1">
+            <h2>1,000,000+</h2>
+            <h3>Active users</h3>
+        </div>
+        <div class="p1">
+            <h2>$46B+</h2>
+            <h3>sold on shopify</h3>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="box"><div class="box1">
+            <p>I am seriously happy about running our store on Shopify. Powerful features and
+                easy to set up, running an online store shouldn't be this much fun!</p>
+        </div>
+        <div class="box2">
+            <h4>Tina Roth Eisenberg</h4>
+            <p>Designer, Founder of Tattly</p>
+        </div></div>
+        <div class="box"><div class="box3">
+            <p>Shopify has helped me grow my buisness
+                amazingly. It's been easier then I ever imagined</p>
+        </div>
+        <div class="box4">
+            <h4>Corrine Anestopoulos</h4>
+            <p>Founder, BIKO jewelry</p>
+        </div></div>
+        <div class="box"><div class="box5">The bestt thing about Shopify is that
+            it's made me not have to worry about anything that has to do with ecommerce</div>
+        <div class="box6">
+            <h4>Cris Tsang</h4>
+            <p>Founder, Mindzai Toys</p>
+        </div></div>
+        <div class="empty"></div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>

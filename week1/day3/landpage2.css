@@ -1,0 +1,61 @@
+body {
+    background: url('https://onlyvectorbackgrounds.com/wp-content/uploads/2019/06/Light-Flat-Shapes-Simple-Background-Colorful.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: sans-serif;
+    
+}
+.tit{ 
+    position:fixed;
+    left:47%;
+    
+}
+.all{
+    display:grid;
+    height: 800px;
+    grid-gap: 30px;
+    /*justify-content: center;*/
+    grid-template-areas: 
+    'a b c'
+    'd e f'
+    'g g g'
+    'h h h';
+    text-align: center;
+}
+.fname{
+    margin-top: 50px;
+    grid-area: a;
+    margin-left: 60%;
+}
+.lname{
+    grid-area: b;
+    margin-top: 50px;
+}
+.email{
+    grid-area: c;
+    margin-top: 50px;
+    margin-right: 60%;
+}
+.phone{
+    margin-left: 60%;
+    grid-area: d;
+}
+.web{grid-area: e;}
+.comp{
+    margin-right: 60%;
+    grid-area: f;
+}
+.cout{
+    margin-left: 47%;
+    grid-area: g;
+}
+.service{grid-area: h;}
+.sub{
+    position:fixed;
+    left:50%;
+    right:50%;
+}
+.wrap{
+    text-align: center;
+}
