@@ -10,27 +10,7 @@
     <!-- font awesome -->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
     <title>Weekend</title>
-    <script>const $body = $("body");
-        const $header = $(".page-header");
-        const scrollClass = "scroll";
-        
-        $(window).on("scroll", () => {
-          if (this.matchMedia("(min-width: 992px)").matches) {
-            const scrollY = $(this).scrollTop();
-            scrollY > 0
-              ? $body.addClass(scrollClass)
-              : $body.removeClass(scrollClass);
-          } else {
-            $body.removeClass(scrollClass);
-          }
-        });</script>
-        <script>$(".page-header .nav-link, .navbar-brand").on("click", function(e) {
-            e.preventDefault();
-            const href = $(this).attr("href");
-            $("html, body").animate({
-              scrollTop: $(href).offset().top - 71
-            }, 600);
-          });</script>
+    
 </head>
 
 <body data-spy="scroll" data-target="#navbar" data-offset="72" class="position-relative">
@@ -301,6 +281,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        <script>const $body = $("body");
+          const $header = $(".page-header");
+          const scrollClass = "scroll";
+          
+          $(window).on("scroll", () => {
+            if (this.matchMedia("(min-width: 992px)").matches) {
+              const scrollY = $(this).scrollTop();
+              scrollY > 0
+                ? $body.addClass(scrollClass)
+                : $body.removeClass(scrollClass);
+            } else {
+              $body.removeClass(scrollClass);
+            }
+          });</script>
+          <script>$(".page-header .nav-link, .navbar-brand").on("click", function(e) {
+              e.preventDefault();
+              const href = $(this).attr("href");
+              $("html, body").animate({
+                scrollTop: $(href).offset().top - 71
+              }, 600);
+            });</script>
 </body>
 
 </html>
