@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ceck="not";
+        let ceck1="bad";
+        /*let test1="This dinner is not that bad!";*/
+        let test1="This movie is not so bad!";
+        /*let test1="This dinner is bad!";*/
+        if((test1.includes("not"))&&(test1.includes("bad"))&&(test1.indexOf("not")<test1.indexOf("bad")))
+        console.log(test1.slice(0,test1.indexOf("not"))+"good!");
+        else
+        console.log(test1)
+
+    </script>
+</body>
+</html>
