@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        test="*"
-    for (let i = 1; i < 4; i++) {
-        for (let t = 0; t < i; t++) {
-        console.log(test);
-        test+="*"       
+        /*       test="*"
+           for (let i = 1; i < 4; i++) {
+               for (let t = 0; t < i; t++) {
+               console.log(test);
+               test+="*"       
+               }
+           }
+       */
+        const numbers = [5, 8, 9, 1, 7, 4, 2, 6, 3, 0];
+        let str = numbers.toString();
+        //  str= numbers.join("+")
+        //  str= numbers.join(" ")
+          str= numbers.join("")
+        let lar=0;
+        let newstr="";
+        for (let i = 0; i < 10; i++) {
+            for (let t = 0; t < 10; t++) {
+                if(str[t]>lar){
+                    lar=str[t];
+                }
+            }
+            newstr+=lar;
+            str=str.replace(lar,"0")
+            lar=0;          
         }
-    }
+        console.log(newstr)
     </script>
 </body>
+
 </html>
