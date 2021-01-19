@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>/*
+    //1
+    let arr = ["blue", "yellow", "green", "pink"];
+    let num;
+    for (let i = 0; i < arr.length; i++) {
+        num = i + 1
+        console.log("My #" + num + " choice is " + arr[i])
+    }
+    //2
+    let people = ["Greg", "Mary", "Devon", "James"];
+    for (let i = 0; i < people.length; i++) {
+        console.log(people[i]);
+    }
+    people.shift()
+    people.splice(people.indexOf("James"), 1, "Jason");
+    people.push("Amichai");
+    for (let i = 0; i < people.length; i++) {
+        if (people[i] == "Jason") {
+            break;
+        }
+        console.log(people[i]);
+    }
+    let copyArr = people.slice(1, people.length - 1);
+    console.log(copyArr);
+    console.log(people.indexOf("Mary"));
+    console.log(people.indexOf("Foo"));
+    let last = people.length - 1;
+
+    //3
+    let num = prompt("number", 10);
+    while (num < 11) {
+        num = prompt("number", 10);
+    }
+
+    //4
+    let guestList = {
+        Randy: "Germany",
+        Karla: "France",
+        Wendy: "Japan",
+        Norman: "England",
+        Sam: "Argentina"
+    }
+    let name = prompt("name", "jhonny");
+    if (name in guestList) {
+        console.log("Hi! I'm " + name + ", and I'm from " + guestList[name] + ".");
+    }
+    else {
+        console.log("Hi! I'm a guest.")
+    }
+
+        //5
+        let family = {
+            Randy: 23,
+            Karla: 29,
+            Wendy: 39,
+            Norman: 15,
+            Sam: 2
+        }
+        for (let key in family) {
+            console.log(key)//returns key
+            console.log(family[key])//returns age
+        }
+        */
+       //6
+       let names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+        names=names.sort();
+        let sname='';
+        for(name in names){
+            sname+=names[name].charAt(0);
+        }
+        console.log(sname);
+    </script>
+</body>
+
+</html>
