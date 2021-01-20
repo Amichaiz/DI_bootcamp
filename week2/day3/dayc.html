@@ -9,14 +9,20 @@
 
 <body>
     <script>
-        /*       test="*"
+               test="*"
            for (let i = 1; i < 4; i++) {
                for (let t = 0; t < i; t++) {
                console.log(test);
                test+="*"       
                }
            }
-       */
+           //it can be done just like this without a nested loop
+           test="*"
+           for (let i = 0; i < 6; i++) {
+               console.log(test)
+               test+="*"
+           }
+       /*
         const numbers = [5, 8, 9, 1, 7, 4, 2, 6, 3, 0];
         let str = numbers.toString();
         //  str= numbers.join("+")
@@ -34,7 +40,7 @@
             str=str.replace(lar,"0")
             lar=0;          
         }
-        console.log(newstr)
+        console.log(newstr)*/
     </script>
 </body>
 

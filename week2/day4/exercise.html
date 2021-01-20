@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*1
+        function checkDriverAge(age){
+            if (age<18){
+                alert("Sorry, you are too young to drive this car. Powering off")
+            }
+            if (age==18){
+                alert("Congratulations on your first year of driving. Enjoy the ride!")
+            }
+            if (age>18){
+                alert("You are old enough to drive, Powering On. Enjoy the ride!")
+            }
+        }
+
+        let age=prompt("Age please",21);
+        checkDriverAge(age);
+        //2
+        function changeEnough(arr, due) {
+            let money = arr[0] * 0.25 + arr[1] * 0.1 + arr[2] * 0.05 + arr[3] * 0.01;
+            if (money > due) {
+                return true;
+            }
+            return false;
+        }
+        let arr=[2,100,0,0];
+        //let arr=[0,0,20,5];
+        let due=14.11;
+        //let due=0.75;
+        if (changeEnough(arr,due)) {
+            console.log("you have enogh money")
+        }
+        else{
+            console.log("go lend money from your parents")
+        }
+       //3
+        function multi23(){
+            let sum=0;
+            let multi=0;
+            let count=0;
+            while(multi<500){
+                sum+=multi;
+                console.log(multi);              
+                multi=23*count;
+                count++;              
+            }
+            return sum;
+        }
+        console.log(multi23())
+        
+        //4
+        let amazonBasket = {
+            glasses: 1,
+            books: 2,
+            floss: 100
+        }
+        const checkBasket=() =>{
+            let check=prompt("item","books");
+            if(check in amazonBasket){
+                return true;
+            }
+            return false;
+        }
+        if (checkBasket()){
+            alert("your item is in the basket");
+        }
+        else alert("not the basket");
+        
+        //5
+        let stock = {
+            "banana": 6,
+            "apple": 0,
+            "pear": 12,
+            "orange": 32,
+            "blueberry": 1
+        }
+        let prices = {
+            "banana": 4,
+            "apple": 2,
+            "pear": 1,
+            "orange": 1.5,
+            "blueberry": 10
+        }
+        let shoppingList =["banana", "orange", "apple"];
+        function myBill() {
+            let sum=0;
+            for (let i = 0; i < shoppingList.length; i++) {
+                if(stock[shoppingList[i]] == 0){
+                    console.log("out of product "+shoppingList[i]);
+                    continue;
+                }
+                sum+=prices[shoppingList[i]];
+                stock[shoppingList[i]]--;                
+            }   
+            return sum;      
+        }
+        console.log(myBill());
+        //6
+        let arr = prompt("bills sep by c", "45, 150, 250")
+        arr = arr.split(", ").map(x => +x)//makes it an int
+        let ltip = [];
+        let final = [];
+        function tips(arr) {
+            for (price of arr) {
+                console.log(price)
+                if (price < 50) {
+                    ltip.push(price * 0.2);
+                    final.push(price * 1.2);
+                    continue;
+                }
+                if (price > 200) {
+                    ltip.push(price * 0.1);
+                    final.push(price * 1.1);
+                    continue;
+                }
+                ltip.push(price * 0.15);
+                final.push(price * 1.15);
+            }
+        }
+        tips(arr);
+        console.log(ltip)
+        console.log(final)
+        //7
+        function hotel_cost() {
+            let nights = prompt("number of nights you want to stay in the hotel", 3)
+            while (isNaN(nights)) {
+                nights = prompt("number of nights you want to stay in the hotel", 3)
+            }
+            return nights * 140;
+        }
+        function plane_ride_cost() {
+            let flight = prompt("Destination", "italy");
+            while (!isNaN(flight)) {
+                flight = prompt("Destination", "italy");
+            }
+            switch (flight) {
+                case "London":
+                    return 193;
+                case "Paris":
+                    return 220;
+                default:
+                    return 300;
+            }
+        }
+        function rental_car_cost() {
+            let days = prompt("number of days you want to rent a car", 3)
+            while (isNaN(days)) {
+                days = prompt("number of days you want to rent a car", 3)
+            }
+            if (days>10){
+                return days*40*0.95;
+            }
+            return days*40;
+        }
+        function total_vacation_cost() {
+            let y = hotel_cost()
+            let z = plane_ride_cost()
+            let x = rental_car_cost()
+            return ` The car cost: ${x}, the hotel cost: ${y}, the plane tickets cost: ${z}. total of ${x+y+z}`
+        }
+        console.log(total_vacation_cost());
+
+*/
+
+    </script>
+
+</body>
+
+</html>
