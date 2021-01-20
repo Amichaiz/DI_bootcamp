@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = prompt("eords sep by comma", "jonny, jiimy, ronit, tamara")
+        let arr = str.split(", ");
+        let longest = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].length > longest) {
+                longest = arr[i].length
+            }
+        }
+        for (let i = -1; i <= arr.length; i++){
+            if((i == -1) || (i == arr.length)){
+                console.log("*".repeat(longest+4))
+                continue;
+            }
+            console.log(`* ${arr[i]}${" ".repeat(longest-arr[i].length)} *`)
+        }
+
+    </script>
+</body>
+
+</html>
