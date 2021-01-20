@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1
+        let rnd = Math.floor(Math.random() * 100);
+        for (let i = 1; i < rnd; i++) {
+            if (i % 2 == 0)
+                console.log(i)
+        }
+        //2
+        console.log(capitalize("abcdef"))
+        function capitalize(str) {
+            let cap = [];
+            cap = str.split("");
+            for (let i = 0; i < cap.length; i++) {
+                if (i % 2 == 0) {
+                    cap[i] = cap[i].toUpperCase()
+                }
+            }
+            return cap.join("")
+        }
+        //3
+        function palindrome(str) {
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] != str[str.length - 1 - i])
+                    return false
+            }
+            return true
+        }
+        if (palindrome("derryed"))
+            console.log("palindrome")
+
+        //4
+        function biggestNumberInArray(arrayNumber) {
+            let bignum = -Infinity;
+            for (let i = 0; i < arrayNumber.length; i++) {
+                if (arrayNumber[i] > bignum) {
+                    bignum = arrayNumber[i];
+                }
+            }
+            return bignum;
+        }
+        console.log(biggestNumberInArray([]))
+        //5
+        function uni(arr) {
+            arr = Array.from(new Set(arr))
+            return arr;
+        }
+        console.log(uni([1, 2, 3, 3, 3, 3, 4, 5]))
+
+    </script>
+</body>
+
+</html>
