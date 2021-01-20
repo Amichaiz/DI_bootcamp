@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //2
+        function isBlank(str) {
+            if (str.length == 0)
+                return true;
+            return false;
+        }
+        let str = "";
+        if (isBlank(str))
+            console.log("blank")
+        //3
+        console.log(abbrev_name("Robin Singh"));
+        function abbrev_name(name) {
+            return name.slice(0, name.indexOf(" ") + 2) + "."
+        }
+        //4
+        function SwapCase(str) {
+            let arr = [];
+            arr = str.split("")
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == arr[i].toUpperCase()) {
+                    arr[i] = arr[i].toLowerCase()
+                }
+                else arr[i] = arr[i].toUpperCase()
+            }
+            return (arr.join(""))
+        }
+        let string = "if I Had A million Dollars"
+        console.log(SwapCase(string))
+        //5
+        function isOmnipresent(arr) {
+            let check = true;
+            let len = arr[0].length;
+            for (let t = 0; t < len; t++) {
+                let num = arr[0][t]
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i].includes(num))
+                        check = false;
+                }
+                if (check = true)
+                    return true;
+                check = true;
+            }
+            return false;
+        }
+            console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6))
+///couldnt get number 5 to work
+
+    </script>
+</body>
+
+</html>
