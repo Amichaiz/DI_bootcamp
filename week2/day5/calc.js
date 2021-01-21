@@ -3,11 +3,12 @@ function  my_f(argument) {
     console.log(argument)
     if (argument == `=`){
         console.log(calc)
-        console.log(eval(calc));
+        document.getElementById("demo").innerHTML = (eval(calc));
         startOver();
         return;
     }
     if (argument == "CLEAR"){
+        document.getElementById("demo").innerHTML = "sum";
         startOver()
         return;
     }

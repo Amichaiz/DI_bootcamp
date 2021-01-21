@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Calculator</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <style>
-      button {
-        width:70px;
-        height:70px;
-      }
-    </style>
-  </head>
+
+<head>
+  <meta charset="utf-8">
+  <title>Calculator</title>
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <style>
+    button {
+      width: 70px;
+      height: 70px;
+      text-align: center;
+
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+
+    #wrapper {
+      margin: auto;
+      width: 60%;
+      border: 5px solid #FFFF00;
+      padding: 10px;
+    }
+    .longbtn{
+      width: 120px;
+    }
+  </style>
+</head>
+<div id="wrapper">
+  <h1 id="demo">sum</h1>
+
   <body>
     <button type="button" name="button" onclick="my_f(1);">1</button>
     <button type="button" name="button" onclick="my_f(2);">2</button>
@@ -31,7 +53,9 @@
     <button type="button" name="button" onclick="my_f('/');">/</button>
     <button type="button" name="button" onclick="my_f('=');">=</button>
     <br>
-    <button type="button" name="button" onclick="my_f('CLEAR');">RESET/CLEAR</button>
-    <script src="calc.js" charset="utf-8"></script>
-  </body>
+    <button class="longbtn" type="button" name="button" onclick="my_f('CLEAR');">RESET/CLEAR</button>
+</div>
+<script src="calc.js" charset="utf-8"></script>
+</body>
+
 </html>
