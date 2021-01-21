@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+</head>
+
+<body>
+    <script>
+
+        function game() {
+            let secret = prompt("secret word please 8 letters", "sisterly");
+            while (secret.length < 8) {
+                secret = prompt("secret word please 8 letters", "sisterly");
+            }
+            let display = `*`.repeat(secret.length)
+            console.log(display)
+            display = display.split(``);
+            secret = secret.toLowerCase();
+            let counter = 0;
+            let guess = ``;
+            let guessed = ``;
+            while (counter < 10) {
+                guess = prompt("guess a letter", "r");
+                while (!isNaN(guess) || (guess.length > 1)) {
+                    guess = prompt("guess a letter", "r");
+                }
+                while (guessed.includes(guess)) {
+                    guess = prompt("looks like you guessed that letter already guess a new letter", "");
+                }
+                if (secret.includes(guess)) {
+                    console.log("score! you guessed " + guess)
+                    for (let i = 0; i < secret.length; i++) {
+                        if (secret[i] == guess) {
+                            display[i] = guess;
+                        }
+                    }
+                    console.log(display.join(""))
+                    if (secret == display.join("")) {
+                        console.log("Congrats you won")
+                        break;
+                    }
+                    guessed += guess;
+                    guess = ``;
+                    continue;
+                }
+                else console.log("nope not this time you guessed " + guess)
+                guessed += guess;
+                guess = ``;
+                counter++;
+                console.log(`you guessed wrong ${counter} time`)
+                if (counter == 10) {
+                    console.log(`you lost`);
+                }
+            }
+        }
+        game()
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beer</title>
+</head>
+<body>
+    <script>
+        function beer(){
+            let start = prompt ("how much beeer on the wall",30);
+            while (isNaN(start)) {
+                start = prompt ("how much beeer on the wall",30);
+            }
+            let off = 1;
+            while (start > 0) {
+                if (off == 1){
+                    console.log(`${start} bottles of beer on the wall, ${start} bottles of beer, Take 1 down, pass it around`)
+                    start = start-off;
+                    off++;
+                    continue;
+                }
+                console.log(`${start} bottles of beer on the wall, ${start} bottles of beer on the wall, ${start} bottles of beer, Take ${off} down, pass them around`)
+                start = start-off;
+                off++;                          
+            }
+            console.log("and you owe the bartender some money...")
+        }
+        beer()
+    </script>
+</body>
+</html>
