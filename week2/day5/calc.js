@@ -1,8 +1,12 @@
 let calc = ``;
 function  my_f(argument) {
-    console.log(argument)
+    if (!isNaN(argument)){
+        calc+=argument;
+        document.getElementById("demo").innerHTML = calc;
+        return;
+    }
+    document.getElementById("demo").innerHTML = argument;
     if (argument == `=`){
-        console.log(calc)
         document.getElementById("demo").innerHTML = (eval(calc));
         startOver();
         return;
