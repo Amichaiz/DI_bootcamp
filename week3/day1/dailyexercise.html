@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- first exercise -->
+    <!-- <div id="navBar">
+        <ul>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Friends</a></li>
+            <li><a href="#">Messenger</a></li>
+            <li><a href="#">My Pics</a></li>
+        </ul>
+    </div>
+    <script>
+        //part1
+        let navdiv = document.getElementById("navBar")
+        navdiv.setAttribute("id", "socialNetworkNavigation")
+        //part2
+        let newli = document.createElement("li")
+        let newContent = document.createTextNode("Logout")
+        newli.appendChild(newContent)
+        navdiv.firstElementChild.appendChild(newli)
+    </script> -->
+
+    <!-- second exercise -->
+
+    <!-- <div id="container">Users:</div>
+    <ul class="list">
+        <li>John</li>
+        <li>Pete</li>
+    </ul>
+    <ul class="list">
+        <li>David</li>
+        <li>Sarah</li>
+        <li>Dan</li>
+    </ul>
+    <script>
+        let all = document.body.children[1]
+
+        all.children[1].textContent = "Richard" //change to Richard
+
+        all.children[0].textContent = "Amichai" //change first to Amichai
+        all.nextElementSibling.children[0].textContent = "Amichai" //change first to Amichai
+
+        for (let i = 0; i < 2; i++) {
+            
+        let newli = document.createElement("li")//new li
+        let newContent = document.createTextNode("Hey students")//test hey students
+        newli.appendChild(newContent)
+        if(i == 0){
+            all.children[1].appendChild(newli) 
+            continue
+        }   
+        all.nextElementSibling.append(newli)
+        }
+        all.nextElementSibling.removeChild(all.nextElementSibling.children[1])//deleting shara
+
+        all.classList.add(`student_list`, `university`, `attendance`)
+        all.nextElementSibling.classList.add(`student_list`) -->
+<!-- 
+        I actually had a lot of trouble with the third exercise it did change the style in the html but not on the screen 
+    </script>-->
+    
+    <!-- exercise 4 -->
+    
+  <div>Users:</div>
+  <ul>
+    <li>John</li>
+    <li>Pete</li>
+  </ul>
+<script>
+    let all = document.body.children[0]
+    all.setAttribute("style", "background-color: blue; padding: 15px;");
+    all.nextElementSibling.removeChild(all.nextElementSibling.children[1])
+    all.nextElementSibling.setAttribute("style","border: solid black 4px;")
+    document.body.setAttribute("style", " font-size: 15px;")
+
+</script>
+    
+
+</body>
+
+</html>

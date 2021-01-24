@@ -13,16 +13,12 @@
                 start = prompt ("how much beeer on the wall",30);
             }
             let off = 1;
-            while (start > 0) {
-                if (off == 1){
-                    console.log(`${start} bottles of beer on the wall, ${start} bottles of beer, Take 1 down, pass it around`)
-                    start = start-off;
-                    off++;
-                    continue;
-                }
-                console.log(`${start} bottles of beer on the wall, ${start} bottles of beer on the wall, ${start} bottles of beer, Take ${off} down, pass them around`)
+            let itthem = "it";
+            while (start > 0) {             
+                console.log(`${start} bottles of beer on the wall, ${start} bottles of beer on the wall, ${start} bottles of beer, Take ${off} down, pass ${itthem} around`)
+                itthem = `them`;
                 start = start-off;
-                off++;                          
+                off++; 
             }
             console.log("and you owe the bartender some money...")
         }
