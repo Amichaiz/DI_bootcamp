@@ -51,7 +51,22 @@
     </tr>
   </table>
   <script>
-    let table = document.body.firstElementChild;
+    let alltd = document.body.querySelectorAll("td")
+    let count = 0;
+    let topcount = 4;
+    let spread = 1;
+    for (let i = 0; i < 25; i++) {
+        if(i == count){
+            alltd[i].setAttribute("style", "background-color: red;")
+        }
+        if(i == topcount){
+            console.log(count +""+ topcount)
+            alltd[i].setAttribute("style", "background-color: red;")
+            alltd[18].setAttribute("style", "background-color: red;")
+            count = count + 6
+            topcount = topcount + 4
+        }       
+    }
     
   </script>
 </body>

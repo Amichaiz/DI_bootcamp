@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let allBooks =[{
+            title: "mercury",
+            author: "lenon",
+            imgUrl: "https://icm.aexp-static.com/shopamex/img/global-images/shopsmall_round_logo.jpg",
+            alreadyRead : true
+        },{
+            title: "wizard",
+            author: "Jhony",
+            imgUrl: "https://cdn3.wpbeginner.com/wp-content/uploads/2020/03/ultimate-small-business-resource-coronavirus.png",
+            alreadyRead : false
+        },{
+            title: "times",
+            author: "Jhon",
+            imgUrl: ("https://pbs.twimg.com/profile_images/875749462957670400/T0lwiBK8_400x400.jpg"),
+            alreadyRead : false
+        },{
+            title: "living",
+            author: "maria",
+            imgUrl: ("https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg"),
+            alreadyRead : true},
+        ]
+        
+        for (let i = 0; i < 2; i++) {   
+            let newtr = document.createElement("tr")
+            let newtd = document.createElement("td")
+            let newContent = allBooks[i].title+" written by "+ allBooks[i].author+allBooks[i].image
+            if(allBooks[i].alreadyRead){
+                newtd.setAttribute("style", "color: red;")
+            }
+            newtd.append(newContent)
+            newtr.appendChild(newtd)
+            document.body.appendChild(newtr)
+        }
+    </script>
+</body>
+</html>
