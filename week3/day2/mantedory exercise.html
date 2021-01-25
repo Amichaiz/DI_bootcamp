@@ -89,20 +89,47 @@
             }
         </script> -->
 
-        third exercise
+        <!-- third exercise
         
         <p>Input radius value and get the volume of a sphere.</p> 
         <form  id="MyForm"> 
             <label for="radius">Radius</label><input type="text" name="radius" id="radius" required> 
             <label for="volume">Volume</label><input type="text" name="volume" id="volume"> 
-            <input type="submit" value="Calculate" id="submit">    
+            <input type="submit" value="Calculate" id="submit"">    
         </form> 
         <script>
-            let input = document.forms[0]
+            let form = document.forms[0]
+            form.addEventListener("submit", calc)
+            function calc() {       
             event.preventDefault()
             let rad = document.getElementsByName("radius")[0].value;
             let vol = document.getElementsByName("volume")[0].value;
-        </script>
+            let h1 = document.createElement("h1")   
+            h1.innerHTML = 3/4*vol*rad;
+            form.appendChild(h1)
+            console.log(rad)
+            }
+            
+        </script> -->
          
+        <!-- forth exercise
+
+        <p>this is a paragraph</p>
+        <script>
+            let p = document.getElementsByTagName("p")[0]
+                        
+            p.addEventListener("mouseover", f1);
+            p.addEventListener("click", f2);
+            p.addEventListener("mouseout", f3);
+            function f1() {
+                this.style.backgroundColor = "red"
+            }
+            function f2() {
+                this.style.color = "yellow"
+            }
+            function f3() {
+                this.setAttribute("style", "text-align: center;");
+            }
+        </script> -->
 </body>
 </html>
