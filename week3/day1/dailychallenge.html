@@ -29,22 +29,17 @@
 
 
     <script>
-        let solar = ["Moon", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+        let solar = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+        let colors = ["blue", "yellow", "pink", "green", "brown", "grey", "orange" ,"tan"]
         let short = document.body
+        let i = 0
         solar.forEach(planet => {
             let divi = document.createElement("div")
             divi.classList.add("planet",planet)
+            divi.setAttribute("style", `background: ${colors[i]};`)
             short.append(divi)
+            i++
         });
-        let all = document.querySelectorAll("div")
-        all[1].setAttribute("style", "background: blue;")
-        all[2].setAttribute("style", "background: yellow;")
-        all[3].setAttribute("style", "background: pink;")
-        all[4].setAttribute("style", "background: green;")
-        all[5].setAttribute("style", "background: brown;")
-        all[6].setAttribute("style", "background: grey;")
-        all[7].setAttribute("style", "background: orange;")
-        all[8].setAttribute("style", "background: black;")
     </script>
     </body>
 </html>

@@ -1,0 +1,109 @@
+<!-- <html>
+
+
+<body>
+
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table>
+
+    <input type="button" onclick="insert_Row()" value="Insert row">
+    <script>
+        function insert_Row() {
+            var table = document.getElementById("sampleTable");
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = "NEW CELL1";
+            cell2.innerHTML = "NEW CELL2";
+
+        };
+    </script>
+</body>
+
+</html> -->
+<!-- <html>
+
+<body>
+    <button id="btn" mouseover="mouseOver">Click me</button>
+    <button id="btn1">Hey Hey</button>
+
+    <script>
+        let x = document.getElementById("btn")
+        let y = document.getElementById("btn1")
+
+        y.addEventListener("mouseover", mouseOver);
+
+        x.addEventListener("mouseover", mouseOver);
+
+        function mouseOver(e) {
+            
+            e.target.style.backgroundColor = "red"
+            e.target.style.color = "green"
+        }
+      /*  function RespondClick() {
+              alert("Button Clicked")
+          }
+  
+          function RespondMouseOver() {
+              alert("My mouse is over the btn")
+          }
+  
+          function RespondMouseOut() {
+              alert("My mouse is out of the btn")
+          }   */
+
+    </script>
+</body>
+
+</html> -->
+<html>
+    <body> 
+        <form id="form1" onsubmit="getvalue()"> 
+        <label>First name: </label><input type="text" name="fname" value="David"><br> 
+        <label>Last name: </label><input type="text" name="lname" value="BenGurion"><br> 
+        <input type="submit" value="Submit"> 
+        </form> 
+        <script>
+            let form = document.forms[0];
+            let newInput =  document.getElementById('input')
+            form.addEventListener("submit", test)
+
+            function test(e){
+                event.preventDefault()   
+            }
+           
+            newInput.oninput = function() {
+                console.log(input.value)
+            };
+
+            
+let formHtml = document.forms[0]
+let buttonHtml = formHtml.elements[1]
+buttonHtml.addEventListener("click", retrieveInput)
+​
+function retrieveInput (event) {
+	//preventing the button from refreshing the page
+	event.preventDefault()
+	let inputHtml = event.target.previousElementSibling
+​
+	let divHtml = document.getElementById("container")
+	//create a paragraph
+	let p = document.createElement("p")
+	//create a text node
+	let content = document.createTextNode(inputHtml.value)
+	//append the text node to the paragraph
+	p.appendChild(content)
+	// append the p to the div
+	divHtml.appendChild(p)
+}
+        </script>
+    </body> 
+</html> 

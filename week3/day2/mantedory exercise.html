@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <style>  
+        body{padding-top:30px;} 
+        label,input{display:block;}  
+    </style>
+</head>
+<body>
+    <!-- first exercise
+    <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+    </article>
+    <form>
+        <label>What is your name?</label><input type="text" name="userName" onchange="paste()">
+        <label>What did you think of the article?</label><input type="text" name="questionToUser" onchange="pastes()">
+    </form>
+    <script>
+        let p = document.querySelectorAll("p")
+        p.forEach(element => {
+            //adding a class to all paragraphs
+            element.classList.add("para_article");
+        });
+        //removing last paragraph
+        p[p.length-1].remove()
+        //h2 delete option
+        let h2 = document.getElementsByTagName("h2")[0]
+        h2.addEventListener("click", delme);
+        function delme(e) {
+            this.remove()
+        }
+        //h1 font size 100
+        let h1 = document.getElementsByTagName("h1")[0]
+        h1.style.fontSize = "100px";
+        //first paragraph alteration
+        p[0].addEventListener("click", hide);
+        function hide(e) {
+            this.style.display = "none";
+        }
+        function paste(){
+        let user = document.getElementsByName("userName")[0].value;
+        let para = document.createElement("p")
+        para.innerHTML = (user)
+        document.body.appendChild(para)
+        }
+        function pastes(){
+         let ques = document.getElementsByName("questionToUser")[0].value;
+         let para = document.createElement("p")
+        para.innerHTML = (ques)
+        document.body.appendChild(para)
+        }
+    </script> -->
+    
+    <!-- second exercise
+    <p><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+        <strong>end</strong> you <strong>will</strong> be great Developers!
+        <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons</p>
+        <script>
+            var bold
+            function getBold_items(){
+                bold = document.querySelectorAll("strong")
+                console.log(bold)
+            }
+            function highlight(){
+               for (let i = 0; i < bold.length; i++) {
+                bold[i].setAttribute("style", "color: blue;")      
+               }                 
+            }
+            function return_normal(){
+                for (let i = 0; i < bold.length; i++) {
+                bold[i].setAttribute("style", "color: black;")      
+               } 
+            }
+            getBold_items()
+            for (let i = 0; i < bold.length; i++) {
+                bold[i].addEventListener("mouseover", highlight);
+                bold[i].addEventListener("mouseout", return_normal);
+            }
+        </script> -->
+
+        third exercise
+        
+        <p>Input radius value and get the volume of a sphere.</p> 
+        <form  id="MyForm"> 
+            <label for="radius">Radius</label><input type="text" name="radius" id="radius" required> 
+            <label for="volume">Volume</label><input type="text" name="volume" id="volume"> 
+            <input type="submit" value="Calculate" id="submit">    
+        </form> 
+        <script>
+            let input = document.forms[0]
+            event.preventDefault()
+            let rad = document.getElementsByName("radius")[0].value;
+            let vol = document.getElementsByName("volume")[0].value;
+        </script>
+         
+</body>
+</html>
