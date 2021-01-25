@@ -54,17 +54,18 @@
     let alltd = document.body.querySelectorAll("td")
     let count = 0;
     let topcount = 4;
-    let spread = 1;
     for (let i = 0; i < 25; i++) {
-        if(i == count){
+        if(i == count||i == topcount){
             alltd[i].setAttribute("style", "background-color: red;")
         }
-        if(i == topcount){
-            console.log(count +""+ topcount)
-            alltd[i].setAttribute("style", "background-color: red;")
-            alltd[18].setAttribute("style", "background-color: red;")
+        if(i==0){
+            continue
+        }
+        if(i%5==0){  
+            console.log(count+" "+topcount)        
             count = count + 6
             topcount = topcount + 4
+            alltd[20].setAttribute("style", "background-color: red;")
         }       
     }
     
