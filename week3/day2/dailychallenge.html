@@ -26,11 +26,9 @@
 
         let libIt = function() {
             let li = document.querySelectorAll("input")
-            console.log(li)
             let noun = li[0].value
             let adje = li[1].value
-            let name = li[2].value  
-            console.log(noun) 
+            let name = li[2].value   
             let storyDiv = document.getElementById("story");
             storyDiv.innerHTML = `there once was a kid named ${name} that loved to ${adje} on ${noun}`;
         };
