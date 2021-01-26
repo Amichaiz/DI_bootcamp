@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Shows only letters</div>
+    <input type="text" id="input">
+    <script>
+        let inp = document.getElementById("input")
+        inp.addEventListener("keypress", delnum);
+        function delnum(e) {
+            if (!(((e.keyCode > 65) && (e.keyCode < 90)) || ((e.keyCode > 97) && (e.keyCode < 122)))) {
+                e.preventDefault()
+                //this.value = this.value.substring(0,this.value.length-1);
+            }
+        }
+    </script>
+</body>
+
+</html>
