@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        count = 1
+        let mid = 4
+        let printy = '*'
+        for (let i = 0; i < 9; i++) {
+            for (let j = 0; j < 9; j++) {
+                if (j == mid) {
+                    console.log(" ".repeat(mid) + printy.repeat(count))
+                    count += 2
+                    mid--
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
