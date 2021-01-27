@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("https://wallpapermemory.com/uploads/669/u2-background-full-hd-1080p-322134.jpg");
+        
+            background-size: cover;
+        }
+        span{
+            margin-top: 35vh;
+            display: flex;
+            flex-wrap: wrap;         
+            justify-content: center;
+            align-items: center;
+            
+        }
+        div{
+            
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            border: 3px solid rgb(255, 251, 0);
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            transition: transform .2s;
+        }
+        div:hover{          
+            transform: scale(1.2);
+        }
+        p{
+            color: yellow;
+        }
+        h1{
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <span>
+        <audio id="a1"><source src="" type="audio/ogg" onclick="playit()"></audio>
+    <div><h1>S</h1><p>boom</p></div>      
+    <div><h1>D</h1><p>clap</p></div>
+    <div><h1>A</h1><p>hihat</p></div>
+    <div><h1>F</h1><p>kick</p></div>
+    <div><h1>G</h1><p>openhat</p></div>
+    <div><h1>H</h1><p>ride</p></div>
+    <div><h1>J</h1><p>snare</p></div>
+    <div><h1>K</h1><p>tink</p></div>
+    <div><h1>L</h1><p>tom</p></div>
+    </span>
+
+    <script>
+        function playit() {
+            this.play()
+        }
+
+    </script>
+</body>
+</html>

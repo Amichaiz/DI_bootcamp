@@ -76,6 +76,7 @@
     
     
     <script>
+        let pleasework = false
         let gridid = document.getElementById("grid")
         let bg = "white"
         let event;
@@ -91,8 +92,10 @@
         }
         //draws the bg color
         function bgc(e) {
+            pleasework = true
             this.style.backgroundColor = bg
             for (let i = 0; i < 2440; i++){
+                
                 event = gridid.children[i].addEventListener("mouseover", hover)
             }  
         }
@@ -102,8 +105,13 @@
         }
         //after click colors where mouse goes
         function hover(e) {
+            if (pleasework == true){
             this.style.backgroundColor = bg
-            
+            this.addEventListener("mouseup", mouseup)
+        }
+    }
+        function mouseup(){
+            pleasework = false
         }
         //btn clear
         function clear(e) {
