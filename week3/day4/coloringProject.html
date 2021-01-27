@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        body{
+            margin: 0;
+            background-color: grey;
+        }
+        .left{
+            display: grid;
+            grid-gap: 4px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            height: 100vh;
+            width: 20%; 
+            float: left;           
+        }
+        .left > * {
+            border: 1px black solid;
+            margin: 4px;
+        }
+        button{
+            font-size: 25px;  
+            grid-column-start: 1;
+            grid-column-end: 4;
+            cursor: pointer;
+        }
+        #grid{
+            display: grid;
+            grid-template-columns: repeat(40, 1fr);
+            grid-template-rows: repeat(61, 1fr);
+            height: 99vh;
+            width: 80%; 
+            float: right; 
+            padding-top: 3px;
+                      
+        }
+        .smallbox{
+            border: 1px solid lightgray ;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    
+        <div class = "left">
+            <button>clear</button>
+            <div style = "background-color:aqua;"></div>
+            <div style = "background-color:black;"></div>
+            <div style = "background-color:blue;"></div>
+            <div style = "background-color:brown;"></div>
+            <div style = "background-color:cadetblue;"></div>
+            <div style = "background-color:chocolate;"></div>
+            <div style = "background-color:cornflowerblue;"></div>
+            <div style = "background-color:crimson;"></div>
+            <div style = "background-color:darkcyan;"></div>
+            <div style = "background-color:darkgreen;"></div>
+            <div style = "background-color:darkorange;"></div>
+            <div style = "background-color:darkseagreen;"></div>
+            <div style = "background-color:deepskyblue;"></div>
+            <div style = "background-color:dodgerblue;"></div>
+            <div style = "background-color:gold;"></div>
+            <div style = "background-color:greenyellow;"></div>
+            <div style = "background-color:indianred;"></div>
+            <div style = "background-color:lawngreen;"></div>
+            <div style = "background-color:lightcoral;"></div>
+            <div style = "background-color:lightgreen;"></div>
+            <div style = "background-color:limegreen;"></div>
+        </div>
+        <div id = "grid"></div>
+    
+    
+    
+    <script>
+        let gridid = document.getElementById("grid")
+        let bg = "white"
+        let event;
+        addGrid()
+        //crating a grid
+        function addGrid() {
+            for (let i = 0; i < 2440; i++) {
+                let div = document.createElement("div")
+                div.classList.add('smallbox');
+                div.addEventListener("mousedown", bgc) 
+                gridid.appendChild(div)    
+            }
+        }
+        //draws the bg color
+        function bgc(e) {
+            this.style.backgroundColor = bg
+            for (let i = 0; i < 2440; i++){
+                event = gridid.children[i].addEventListener("mouseover", hover)
+            }  
+        }
+        //gets the background color
+        function draw(e) {          
+            bg = this.style.backgroundColor
+        }
+        //after click colors where mouse goes
+        function hover(e) {
+            this.style.backgroundColor = bg
+            
+        }
+        //btn clear
+        function clear(e) {
+            bg = "white"
+            for (let i = 0; i < 2440; i++) {
+               gridid.children[i].style.backgroundColor = bg 
+            } 
+        
+         }
+        //gets the bg color
+        let colors = document.body.firstElementChild.querySelectorAll("div")
+        for (let i = 0; i < 21; i++) {
+           colors[i].addEventListener("click", draw)    
+        }
+        //btn clear
+        let btr = document.getElementsByTagName("button")[0] 
+        btr.addEventListener("click", clear)
+        
+        
+        
+    </script>
+</body>
+</html>
