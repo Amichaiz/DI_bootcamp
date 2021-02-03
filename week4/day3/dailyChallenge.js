@@ -13,4 +13,5 @@ const users = {
     user3: 90315
     }
 const arr = Object.keys(users).map((key) => [String(key), users[key]*2]);
-console.log(arr) 
+const arr1 = Object.entries(users);
+console.log(arr1) 
