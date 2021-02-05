@@ -1,177 +1,72 @@
-var playerSymbol;
-var enemySymbol;
-var win;  // TRUE if somebody won the game
-var turn; // Number of the current turn
-var row, column;  // Will contain "coordinates"for a specific cell
-var cpuEnabled = true;  // Set this to false to play against a human
+//igor
+//https://ca.slack-edge.com/T7P4CAKAS-U01J9MJH1JN-4e0c6db4711a-512
 
-$(document).ready(function() {
-  // Intro screen buttons
-  $("#choose-x").on("click", function() {
-    playerSymbol = "X";
-    enemySymbol = "O";
-    $("#intro-screen").fadeOut(300, showEnemyScreen);
-  });
-  $("#choose-o").on("click", function() {
-    playerSymbol = "O";
-    enemySymbol = "X";
-    $("#intro-screen").fadeOut(300, showEnemyScreen);
-  });
-  
-  // Enemy screen buttons
-  $("#choose-human").on("click", function() {
-    cpuEnabled = false;
-    startGame();
-  });
-  $("#choose-cpu").on("click", function() {
-    cpuEnabled = true;
-    startGame();
-  });
-  
-  // Game screen buttons
-  $("#restart").on("click", function() {
-    restartGame();
-  });
-  $(".cell").on("click", function() {
-    // If nobody has won yet and clicked cell is empty
-    if(!win && this.innerHTML === "") {
-      if(turn%2 === 0) { // Even number = player turn
-        insertSymbol(this, playerSymbol);
-      }
-      else { // Odd number = enemy turn
-        insertSymbol(this, enemySymbol);
-      }
-    }
-  });
-});
+//ziv
+//https://ca.slack-edge.com/T7P4CAKAS-UP17FT59U-g660cee370b1-512
+let player
+let comp
+let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+let divs = document.getElementsByClassName("box")
+let igor = document.getElementById("igor")
+igor.addEventListener("click", playerigor);
+let ziv = document.getElementById("ziv")
+ziv.addEventListener("click", playerziv);
 
-
-/******  FUNCTIONS  ******/
-
-
-// Inserts a symbol in the clicked cell
-function insertSymbol(element, symbol) {
-  element.innerHTML = symbol;
-  
-  if(symbol === enemySymbol)
-    $("#" + element.id).addClass("player-two"); // Color enemy symbol differently
-  $("#" + element.id).addClass("cannotuse");  // Show a "disabled" cursor on already occupied cells
-  
-  checkWinConditions(element);
-  turn++;
-  // Game end - If somebody has won or all cells are filled
-  if(win || turn > 8) {
-    $("#restart").addClass("btn-green");  // Highlights "restart" button
-    $(".cell").addClass("cannotuse");  // Tells visually you can't interact anymore with the game grid
-  }
-  else if(cpuEnabled && turn%2 !== 0) {
-    cpuTurn();
-  }
+function playerigor(){
+    player = "igor"
+    comp = "ziv"
+    ziv.removeEventListener("click", playerziv)
+    igor.removeEventListener("click", playerigor)
+    listener()
 }
+function playerziv(){
+    player = "ziv"
+    comp = "igor"
+    ziv.removeEventListener("click", playerziv)
+    igor.removeEventListener("click", playerigor)
+    listener()
+}
+function listener(){
+ 
+for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener("click",game)  
+}
+}
+function game(){
+    this.removeEventListener("click",game)
+    arr.splice(arr.indexOf(parseInt(this.id)), 1) 
+    this.classList.add(player) 
+    win(player)   
+    computerturn()
+}
+function computerturn(){
+    let guess = Math.floor(Math.random()*9)
+    while(!arr.includes(guess)){
+        guess = Math.floor(Math.random()*9)
+        if(arr.length==0){
+            break
+        }
+    }
+    arr.splice(arr.indexOf(guess), 1)
+    divs[guess].classList.add(comp)
+    divs[guess].removeEventListener("click",game)
+    win(comp) 
+}
+function win(winner){
+    if(
+    (divs[0].classList.contains(winner) && divs[1].classList.contains(winner) && divs[2].classList.contains(winner))||
+    (divs[3].classList.contains(winner) && divs[4].classList.contains(winner) && divs[5].classList.contains(winner))||
+    (divs[6].classList.contains(winner) && divs[7].classList.contains(winner) && divs[8].classList.contains(winner))||
 
-/* Changes screen with a fade effect */
-function startGame() {
-  /* Shows the game screen when the intro screen is completely hidden */
-  $("#enemy-screen").fadeOut(300, showGameScreen);
-  restartGame();
-}
-function showGameScreen() {
-  $("#game-screen").fadeIn(300);
-}
-function showEnemyScreen() {
-  $("#enemy-screen").fadeIn(300);
-}
+    (divs[0].classList.contains(winner) && divs[3].classList.contains(winner) && divs[6].classList.contains(winner))||
+    (divs[1].classList.contains(winner) && divs[4].classList.contains(winner) && divs[7].classList.contains(winner))||
+    (divs[2].classList.contains(winner) && divs[5].classList.contains(winner) && divs[8].classList.contains(winner))||
 
-/* Sets everything to its default value */
-function restartGame() {
-  turn = 0;
-  win = false;
-  $(".cell").text("");
-  $(".cell").removeClass("wincell");
-  $(".cell").removeClass("cannotuse");
-  $(".cell").removeClass("player-two");
-  $("#restart").removeClass("btn-green");
-}
-
-/* Check if there's a winning combination in the grid (3 equal symbols in a row/column/diagonal) */
-function checkWinConditions(element) {
-  // Retrieve cell coordinates from clicked button id
-  row = element.id[4];
-  column = element.id[5];
-  
-  // 1) VERTICAL (check if all the symbols in clicked cell's column are the same)
-  
-  win = true;
-  for(var i=0; i<3; i++) {
-    if($("#cell" + i + column).text() !== element.innerHTML) {
-      win = false;
+    (divs[0].classList.contains(winner) && divs[4].classList.contains(winner) && divs[8].classList.contains(winner))||
+    (divs[6].classList.contains(winner) && divs[4].classList.contains(winner) && divs[2].classList.contains(winner))){
+    alert("The Winner is "+winner)
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].removeEventListener("click",game)  
     }
-  }
-  if(win) {
-    for(var i=0; i<3; i++) {
-      // Highlight the cells that form a winning combination
-      $("#cell" + i + column).addClass("wincell");
     }
-    return; // Exit from the function, to prevent "win" to be set to false by other checks
-  }
-  
-  // 2) HORIZONTAL (check the clicked cell's row)
-  
-  win = true;
-  for(var i=0; i<3; i++) {
-    if($("#cell" + row + i).text() !== element.innerHTML) {
-      win = false;
-    }
-  }
-  if(win) {
-    for(var i=0; i<3; i++) {
-      $("#cell" + row + i).addClass("wincell");
-    }
-    return;
-  }
-  
-  // 3) MAIN DIAGONAL (for the sake of simplicity it checks even if the clicked cell is not in the main diagonal)
-  
-  win = true;
-  for(var i=0; i<3; i++) {
-    if($("#cell" + i + i).text() !== element.innerHTML) {
-      win = false;
-    }
-  }
-  if(win) {
-    for(var i=0; i<3; i++) {
-      $("#cell" + i + i).addClass("wincell");
-    }
-    return;
-  }
-  
-  // 3) SECONDARY DIAGONAL
-  
-  win = false;
-  if($("#cell02").text() === element.innerHTML) {
-    if($("#cell11").text() === element.innerHTML) {
-      if($("#cell20").text() === element.innerHTML) {
-        win = true;
-        $("#cell02").addClass("wincell");
-        $("#cell11").addClass("wincell");
-        $("#cell20").addClass("wincell");
-      }
-    }
-  }
-}
-
-// Simple AI (clicks a random empty cell)
-function cpuTurn() {
-  var ok = false;
-  
-  while(!ok) {
-    row = Math.floor(Math.random() * 3);
-    column = Math.floor(Math.random() * 3);
-    if( $("#cell"+row+column).text() === "" ) {
-      // We have found it! Stop looking for an empty cell
-      ok = true;
-    }
-  }
-  
-  $("#cell"+row+column).click(); // Emulate a click on the cell
 }

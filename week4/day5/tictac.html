@@ -1,162 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac</title>
-    <style>.container{
-        width: 330px;
-        overflow: hidden;
-        margin: 50px auto 0 auto;
-    }
-    
-    .container span{
-        display: block;
-        text-align: center;
-        font-family: sans-serif;
-        font-size: 40px;
-        margin-bottom: 40px;
-    }
-    
-    .container .box{
-        float: left;
-        width: 100px;
-        height: 100px;
-        border: 1px solid #000;
-        transition: all .25s ease-in-out;
-        font-size: 85px;
-        text-align: center;
-        line-height: 100px; 
-        cursor: pointer;
-      }
-    
-    .container .box:hover{
-        background: rgb(174, 244, 255);
-        color: rgb(108, 108, 108);
-    }
-    
-    .btn{
-        width: 200px;
-        font-weight: bold;
-        cursor: pointer;
-        font-size: 15px;
-        display: block;
-        margin: 40px auto;
-        -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
-        box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
-    }
-    
-    .win{
-        background: #48ceff; 
-        color: rgb(0, 94, 255);
-    }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+body{
+  background-color: cadetblue;
+}
+.container{
+  text-align: center;
+  
+}
+p{
+  margin: 0;
+  font-size: 10vh;
+  font-family: cursive;
+}
+h4{
+  font-family: cursive;
+}
+.box{
+  height: 20vh;
+  width: 20vh;
+  text-align: center;
+  font-size: 15vh;
+  cursor: pointer;
+}
+.box:hover {
+    background-color: cyan;
+  }
+.flex{
+  display:flex;
+  justify-content: center;
+}
+.u{
+  border-top: 3px solid blue;
+}
+.r{
+  border-right: 3px solid blue;
+}
+.l{
+  border-left: 3px solid blue;
+}
+.d{
+  border-bottom: 3px solid blue;
+}
+.ziv{
+background-image: url("https://ca.slack-edge.com/T7P4CAKAS-UP17FT59U-g660cee370b1-512");
+height: 20vh;
+  width: 20vh;
+background-size: cover;
+cursor: pointer;
+}
+.igor{
+  background-image: url("https://ca.slack-edge.com/T7P4CAKAS-U01J9MJH1JN-4e0c6db4711a-512");
+  height: 20vh;
+  width: 20vh;  
+background-size: cover;
+cursor: pointer;
+}
+
+  </style>
 </head>
 <body>
-    <div class="container" id="main">
-        <span id="turn">Tic Tac Toe</span>
-    
-        <div class="box" style="border-left: 0; border-top: 0" id="box1"></div>
-        <div class="box" style="border-top: 0" id="box2"></div>
-        <div class="box" style="border-top: 0; border-right: 0" id="box3"></div>
-        <div class="box" style="border-left: 0" id="box4"></div>
-        <div class="box" id="box5"></div>
-        <div class="box" style="border-right: 0" id="box6"></div>
-        <div class="box" style="border-left: 0; border-bottom: 0" id="box7"></div>
-        <div class="box" style="border-bottom: 0" id="box8"></div>
-        <div class="box" style="border-right: 0; border-bottom: 0" id="box9"></div>
-      </div>
-    
-      <button class="btn btn-rounded" id="replay">Play Again</button>
-
-    <script>
-         var turn = document.getElementById("turn"),
-      boxes = document.querySelectorAll("#main div"), X_or_O = 0;
-
-    function selectWinnerBoxes(b1, b2, b3) {
-      b1.classList.add("win");
-      b2.classList.add("win");
-      b3.classList.add("win");
-      turn.innerHTML = b1.innerHTML + " is a winner";
-      turn.style.fontSize = "40px";
-    }
-
-    function getWinner() {
-
-      var box1 = document.getElementById("box1"),
-        box2 = document.getElementById("box2"),
-        box3 = document.getElementById("box3"),
-        box4 = document.getElementById("box4"),
-        box5 = document.getElementById("box5"),
-        box6 = document.getElementById("box6"),
-        box7 = document.getElementById("box7"),
-        box8 = document.getElementById("box8"),
-        box9 = document.getElementById("box9");
-
-      if (box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML)
-        selectWinnerBoxes(box1, box2, box3);
-
-      if (box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
-        selectWinnerBoxes(box4, box5, box6);
-
-      if (box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML)
-        selectWinnerBoxes(box7, box8, box9);
-
-      if (box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML)
-        selectWinnerBoxes(box1, box4, box7);
-
-      if (box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
-        selectWinnerBoxes(box2, box5, box8);
-
-      if (box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
-        selectWinnerBoxes(box3, box6, box9);
-
-      if (box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML)
-        selectWinnerBoxes(box1, box5, box9);
-
-      if (box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML)
-        selectWinnerBoxes(box3, box5, box7);
-
-    }
-
-
-
-    for (var i = 0; i < boxes.length; i++) {
-      boxes[i].onclick = function () {
-        if (this.innerHTML !== "X" && this.innerHTML !== "O") {
-          if (X_or_O % 2 === 0) {
-            console.log(X_or_O);
-            this.innerHTML = "X";
-            turn.innerHTML = "O Turn Now";
-            getWinner();
-            X_or_O += 1;
-
-          } else {
-            console.log(X_or_O);
-            this.innerHTML = "O";
-            turn.innerHTML = "X Turn Now";
-            getWinner();
-            X_or_O += 1;
-          }
-        }
-
-      };
-    }
-
-    document.getElementById('replay').addEventListener('click', replay);
-
-    function replay() {
-
-      for (var i = 0; i < boxes.length; i++) {
-        boxes[i].classList.remove("win");
-        boxes[i].innerHTML = "";
-        turn.innerHTML = "Play";
-        turn.style.fontSize = "25px";
-
-      }
-
-    }
-    </script>
+  <div class="container">
+    <p>Tic Tac Toe</p>
+  <div class="flex">
+    <div id="0"class="d r box box1"></div>
+    <div id="1"class="d r l box box2"></div>
+    <div id="2"class="d l box box3"></div>
+  </div>
+  <div class="flex">
+    <div id="3"class="d u r box box4"></div>
+    <div id="4"class="d u r l box box5"></div>
+    <div id="5"class="d u l box box6"></div>
+  </div>
+  <div class="flex">
+    <div id="6"class="u r box box7"></div>
+    <div id="7"class="u r l box box8"></div>
+    <div id="8"class="u l box box9"></div>
+  </div>
+  <h4>Choose your player</h4>
+  <div class="flex">
+    <div id="ziv" class="ziv"></div>
+    <div id="igor" class="igor"></div>
+  </div>
+</div>
+<script type="text/Javascript" src="tictac.js"></script>
 </body>
 </html>
