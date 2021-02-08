@@ -1,4 +1,4 @@
-const robots = [
+/*const robots = [
     {
       id: 1,
       name: 'Leanne Graham',
@@ -69,7 +69,7 @@ const robots = [
       email: 'Rey.Padberg@karina.biz',
       image:'https://robohash.org/10?200x200'
     }
-    ];
+    ];*/
     function createRobots(robots){
         const container = document.getElementById("container")
         robots.map(e=>{
@@ -77,7 +77,7 @@ const robots = [
             newdiv.classList.add("box");
             let image = document.createElement('img')
             image.classList.add("circle");
-            image.src = e.image
+            image.src = `https://robohash.org/${e.id}?200x200`
             newdiv.append(image)
             let newh4 = document.createElement("h4")
             newh4.innerHTML = e.name
@@ -85,11 +85,27 @@ const robots = [
             let newh6 = document.createElement("h6")
             newh6.innerHTML = e.email
             newdiv.appendChild(newh6)
+            //adds city if you change back to the array comment out this 3 lines
+            let newh62 = document.createElement("h6")
+            newh62.innerHTML = e.address.city
+            newdiv.append(newh62)
             container.appendChild(newdiv)
         })
+        
 }
+//retrieving data from oudside link also adds city from new info
+let xhr = new XMLHttpRequest();
+xhr.open('GET', "https://jsonplaceholder.typicode.com/users");
+xhr.responseType = 'json'
+xhr.send()
 
-createRobots(robots)
+xhr.onload = function() {
+  createRobots(xhr.response);
+  console.log(xhr.response)
+};
+
+
+//createRobots(robots)
 let filterrobo = document.getElementById("search")
 filterrobo.addEventListener("keyup", (event)=>{
     let input = event.target.value
