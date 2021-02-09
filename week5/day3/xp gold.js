@@ -9,10 +9,11 @@ const urls = [
     'https://swapi.dev/api/people/3',
     'https://swapi.dev/api/people/4'
   ]
-  let requests = urls.map(url => fetch(url));
-  console.log(requests)
-  Promise.all(requests)
+  let requests = urls.map(e => fetch(e));
+  console.log(requests);
+  //Promise.all(requests)
   .then(data => {
+    console.log(data);
     for(let response of data) {
         console.log(response);
     }
