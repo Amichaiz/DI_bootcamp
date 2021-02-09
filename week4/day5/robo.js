@@ -70,31 +70,44 @@
       image:'https://robohash.org/10?200x200'
     }
     ];*/
-    function createRobots(robots){
-        const container = document.getElementById("container")
-        robots.map(e=>{
-            let newdiv = document.createElement("div")
-            newdiv.classList.add("box");
-            let image = document.createElement('img')
-            image.classList.add("circle");
-            image.src = `https://robohash.org/${e.id}?200x200`
-            newdiv.append(image)
-            let newh4 = document.createElement("h4")
-            newh4.innerHTML = e.name
-            newdiv.append(newh4)
-            let newh6 = document.createElement("h6")
-            newh6.innerHTML = e.email
-            newdiv.appendChild(newh6)
-            //adds city if you change back to the array comment out this 3 lines
-            let newh62 = document.createElement("h6")
-            newh62.innerHTML = e.address.city
-            newdiv.append(newh62)
-            container.appendChild(newdiv)
-        })
-        
+function createRobots(robots) {
+  const container = document.getElementById("container")
+  robots.map(e => {
+    let newdiv = document.createElement("div")
+    newdiv.classList.add("box");
+    let image = document.createElement('img')
+    image.classList.add("circle");
+    image.src = `https://robohash.org/${e.id}?200x200`
+    newdiv.append(image)
+    let newh4 = document.createElement("h4")
+    newh4.innerHTML = e.name
+    newdiv.append(newh4)
+    let newh6 = document.createElement("h6")
+    newh6.innerHTML = e.email
+    newdiv.appendChild(newh6)
+    let btn = document.createElement("button")
+    btn.innerHTML = "posts"
+    newdiv.appendChild(btn)
+    btn.addEventListener("click", function () {
+      let xhr2 = new XMLHttpRequest();
+      xhr2.open('GET', `https://jsonplaceholder.typicode.com/posts?userId=${e.id}`);
+      xhr2.responseType = 'json'
+      xhr2.send()
+
+      xhr2.onload = function () {
+        console.log(xhr2.response)
+      }
+    })
+    //adds city if you change back to the array comment out this 3 lines
+    let newh62 = document.createElement("h6")
+    newh62.innerHTML = e.address.city
+    newdiv.append(newh62)
+    container.appendChild(newdiv)
+  })
+
 }
 //retrieving data from oudside link also adds city from new info
-let xhr = new XMLHttpRequest();
+/*let xhr = new XMLHttpRequest();
 xhr.open('GET', "https://jsonplaceholder.typicode.com/users");
 xhr.responseType = 'json'
 xhr.send()
@@ -102,23 +115,32 @@ xhr.send()
 xhr.onload = function() {
   createRobots(xhr.response);
   console.log(xhr.response)
-};
-
+};*/
+fetch(`https://jsonplaceholder.typicode.com/users`)
+  .then(response => {
+    return response.json()
+  })  // convert to json
+  .then(data => {
+    createRobots(data)
+  })    // print data to console
+  .catch(err => {
+    console.log('Request Failed', err)
+  });
 
 //createRobots(robots)
 let filterrobo = document.getElementById("search")
-filterrobo.addEventListener("keyup", (event)=>{
-    let input = event.target.value
-    let allrobo = document.getElementById("container").querySelectorAll("div")
-    robots.map(e =>{
-        if (!e.name.toUpperCase().includes(input.toUpperCase())){
-        allrobo[e.id-1].style.display ="none"
-        }
-        else allrobo[e.id-1].style.display ="block"
-    })
-    /*let newarr = robots.filter(e => !e.name.toUpperCase().includes(input.toUpperCase()))
-    document.getElementById("container").removeChild
-    createRobots(newarr)*/
+filterrobo.addEventListener("keyup", (event) => {
+  let input = event.target.value
+  let allrobo = document.getElementById("container").querySelectorAll("div")
+  robots.map(e => {
+    if (!e.name.toUpperCase().includes(input.toUpperCase())) {
+      allrobo[e.id - 1].style.display = "none"
+    }
+    else allrobo[e.id - 1].style.display = "block"
+  })
+  /*let newarr = robots.filter(e => !e.name.toUpperCase().includes(input.toUpperCase()))
+  document.getElementById("container").removeChild
+  createRobots(newarr)*/
 })
 
 

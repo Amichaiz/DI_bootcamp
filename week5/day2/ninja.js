@@ -10,7 +10,7 @@ xhr.addEventListener("readystatechange", function () {
 	}
 });
 
-xhr.open("GET", "https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=funny%20cat");
+xhr.open("GET", "https://giphy.p.rapidapi.com/v1/gifs/search?api_key=4pLGPCW1xDUAsCABCsBrVjFp5CzwlG83&q=funny%20cat");
 xhr.setRequestHeader("x-rapidapi-key", "3f4b6a1089msh03de9a7e44c4095p1bfbb9jsnc3f17936c7c9");
 xhr.setRequestHeader("x-rapidapi-host", "giphy.p.rapidapi.com");
 
