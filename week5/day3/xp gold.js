@@ -9,22 +9,15 @@ const urls = [
     'https://swapi.dev/api/people/3',
     'https://swapi.dev/api/people/4'
   ]
-  urls.map(e => {
-    fetch(e)
-  //Promise.all(e)
-  .then(response => {
-    return response.json()
-  }) 
-  .then(data => {
-    console.log(data);
-    for(let response of data) {
-        console.log(response);
-    }
-  })    // print data to console
-  .catch(err => {
-    console.log('Request Failed', err)
-  });
-})
+  Promise.all(urls.map(url =>
+    fetch(url).then(people => people.json())
+  ))
+  .then(array => {
+    console.log('1', array[0])
+    console.log('2', array[1])
+    console.log('3', array[2])
+  })
+  .catch(err => console.log('ughhhh fix it!', err));
   /*
     urls.map(e => {
     fetch(e)

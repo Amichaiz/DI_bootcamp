@@ -116,6 +116,7 @@ xhr.onload = function() {
   createRobots(xhr.response);
   console.log(xhr.response)
 };*/
+/*
 fetch(`https://jsonplaceholder.typicode.com/users`)
   .then(response => {
     return response.json()
@@ -126,6 +127,14 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
   .catch(err => {
     console.log('Request Failed', err)
   });
+  */
+ const func = async function(){
+  const response = await fetch('https://jsonplaceholder.typicode.com/users')
+  const data = await response.json()
+  console.log(data)
+  createRobots(data)
+}
+ func()
 
 //createRobots(robots)
 let filterrobo = document.getElementById("search")
