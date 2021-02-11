@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars</title>
+    <style>
+        body{
+            background-image: url("https://i.pinimg.com/originals/67/02/32/670232f4144343e71cbe7b11b7f4e232.jpg");
+   
+        }
+        #title{
+            background: url(https://i.dlpng.com/static/png/253278_thumb.png) center center no-repeat;
+    width: 400px;
+    height: 300px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png) center center no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    margin-top: -20px;
+        }
+        .wrapper{
+            display: block;
+        }
+        .container{
+            border: 3px solid yellow;
+    border-radius: 15px;
+    width: 600px;
+    height: 250px;
+    margin: 0 auto;
+    color: cornsilk;
+    text-align: center;
+        }
+        button{
+            display: block;
+            margin: 0 auto; 
+            font-size: 20px;  
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="title">Star Wars</div>
+        <div class="container">
+            <h1 id="name"></h1>
+            <p id="height"></p>
+            <p id="gender"></p>
+            <p id="byear"></p>
+            <p id="hworld"></p>
+        </div>
+        <button type="button" id="but">Find Someone</button>
+    </div>
+    <script type="text/Javascript" src="stars.js"></script>
+</body>
+</html>
