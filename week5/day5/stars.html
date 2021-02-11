@@ -1,47 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Wars</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <style>
-        body{
+        body {
             background-image: url("https://i.pinimg.com/originals/67/02/32/670232f4144343e71cbe7b11b7f4e232.jpg");
-   
         }
-        #title{
+        #title {
             background: url(https://i.dlpng.com/static/png/253278_thumb.png) center center no-repeat;
-    width: 400px;
-    height: 300px;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png) center center no-repeat;
-    background-size: contain;
-    margin: 0 auto;
-    margin-top: -20px;
+            width: 400px;
+            height: 300px;
+            background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png) center center no-repeat;
+            background-size: contain;
+            margin: 0 auto;
+            margin-top: -20px;
         }
-        .wrapper{
+        .wrapper {
             display: block;
         }
-        .container{
+        .container {
             border: 3px solid yellow;
-    border-radius: 15px;
-    width: 600px;
-    height: 250px;
-    margin: 0 auto;
-    color: cornsilk;
-    text-align: center;
+            border-radius: 15px;
+            width: 600px;
+            height: 250px;
+            margin: 0 auto;
+            color: cornsilk;
+            text-align: center;
         }
-        button{
+        button {
             display: block;
-            margin: 0 auto; 
-            font-size: 20px;  
+            margin: 0 auto;
+            font-size: 20px;
+        }
+        #spinner {
+            display: none;
         }
     </style>
 </head>
+
 <body>
     <div class="wrapper">
         <div id="title">Star Wars</div>
         <div class="container">
+            <div id="spinner" class="fa-3x">
+                <i id="i" class="fas fa-spinner fa-spin"></i>
+            </div>
             <h1 id="name"></h1>
             <p id="height"></p>
             <p id="gender"></p>
@@ -52,4 +61,5 @@
     </div>
     <script type="text/Javascript" src="stars.js"></script>
 </body>
+
 </html>

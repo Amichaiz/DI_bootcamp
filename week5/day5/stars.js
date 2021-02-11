@@ -1,12 +1,16 @@
-
+let spin = document.getElementById('spinner')
 const func = async function () {
+    spin.style.display = "block"
+    try{
     
     let rnd = Math.floor(Math.random() * 80+1)
     const response = await fetch(`https://swapi.dev/api/people/${rnd}`)
     const data = await response.json()
-    html(data)
-    
-       
+    spin.style.display = 'none'
+    html(data)  
+    }catch{
+        document.getElementById("name").innerHTML = "try again"
+    }
 }
 function html(data) {
     console.log(data)
