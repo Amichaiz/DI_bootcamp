@@ -9,6 +9,41 @@
         .container{
             display: flex;
         }
+        .containerinfo{
+            position: absolute;
+            top: 120px; 
+            left: 700px;
+        }
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            width: 108px;
+            height: 108px;
+            top: 434px;
+            left: 1029px;
+            cursor: pointer;
+}
+#spinner {
+    position: absolute;
+             display: none; 
+            left:650px;
+            top:220px;           
+        }
+        .box {
+            position: absolute;
+            width: 61px;
+            height: 32px;
+            cursor: pointer;
+        }
+        .boxl{
+            top: 471px;
+            left: 446px;
+        }
+        .boxr{
+            top: 471px;
+            left: 511px;
+        }
+
     </style>
 </head>
 <body>
@@ -16,14 +51,19 @@
         <div id="pokelogo"><img src="https://raw.githubusercontent.com/devtlv/studentsGitHub/master/JS/Week%205/Day%205/Mini%20Projects/Mini-Project%202%20-%20Pokedex%20API/logo.png" alt="logo"></div>
         <div id="info"><img src="https://raw.githubusercontent.com/devtlv/studentsGitHub/master/JS/Week%205/Day%205/Mini%20Projects/Mini-Project%202%20-%20Pokedex%20API/pokedex.png" alt="body">
             <div class="containerinfo">
-                <div id="img" src=""></div>
+                <img id="img" src=""></img><br><br><br><br><br><br><br><br><br>
                 <h1 id="name"></h1>
                 <p id="number"></p>
                 <p id="height"></p>
                 <p id="weight"></p>
                 <p id="type"></p>
+                
             </div>
         </div>
+        <span id="but" class="dot"></span>
+        <span id="boxr" class="box boxr"></span>
+        <span id="boxl" class="box boxl"></span>
+        <div id="spinner"><img src="http://www.complicite.org/_images/loading.gif"></div>
         <div id="instruction"><h2>How to use:</h2>
             <p>1- Press the green button to get a random Pokémon</p>
             <p>2- Press the left and right buttons to see previous and next Pokémon.</p></div>
