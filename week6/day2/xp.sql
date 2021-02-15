@@ -109,3 +109,9 @@ FROM
     customer
 INNER JOIN payment
     ON customer.customer_id = payment.customer_id
+    SELECT 
+    country,city
+FROM
+    city
+INNER JOIN country
+    ON country.country_id = city.country_id
