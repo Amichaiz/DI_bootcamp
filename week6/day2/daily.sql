@@ -1,3 +1,4 @@
+
 Q1. What will be the OUTPUT of the following statement?
 SELECT COUNT(*) 
 FROM FirstTab a WHERE a.Id NOT IN ( SELECT Id FROM SecondTab WHERE Id IS NULL )
