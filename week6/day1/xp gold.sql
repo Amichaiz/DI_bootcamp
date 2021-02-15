@@ -82,7 +82,7 @@ select count(lname) from students
 where math_grade>83;
 
 insert into students (fname, lname, birth_date,math_grade) values ('Omer', 'Simpson','03/10/1980',70);
-
+select fname ||' '|| lname ||' '|| math_grade as total_grade from students
 
 select sum(math_grade) from students
 
