@@ -29,6 +29,11 @@ ORDER BY
     lname asc 
 FETCH FIRST 4 ROW ONLY;
 
+select fname, lname, birth_date from students
+ORDER BY
+    lname asc 
+ limit 4 offset 3;
+
 SELECT min(birth_date) AS min_date
 FROM   students
 
