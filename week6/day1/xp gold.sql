@@ -44,3 +44,46 @@ select max(actor_id) from actor;
 ERROR:  null value in column "last_name" of relation "actor" violates not-null constraint
 DETAIL:  Failing row contains (203, Marc, null, 1998-11-02 00:00:00).
 SQL state: 23502
+
+update students
+set birth_date= '02/11/1998'
+where lname='Benichou';
+
+update students
+set lname='Guez'
+where lname='Grez';
+
+delete from students where fname='Lea'
+
+select count(lname) from students;
+
+select count(lname) from students
+where birth_date>'1/01/2000';
+
+ALTER TABLE students
+ADD COLUMN math_grade integer;
+
+
+update students
+set math_grade=80
+where id=1;
+
+
+update students
+set math_grade=90
+where id=2 or id=4;
+
+
+update students
+set math_grade=40
+where id=6;
+
+select count(lname) from students
+where math_grade>83;
+
+insert into students (fname, lname, birth_date,math_grade) values ('Omer', 'Simpson','03/10/1980',70);
+
+
+select sum(math_grade) from students
+
+
