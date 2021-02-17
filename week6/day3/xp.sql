@@ -58,4 +58,4 @@ update film
 set language_id =2
 where film_id<10;
 
-
+drop table customer_review;
