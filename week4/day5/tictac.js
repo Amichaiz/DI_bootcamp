@@ -1,10 +1,7 @@
-//igor
-//https://ca.slack-edge.com/T7P4CAKAS-U01J9MJH1JN-4e0c6db4711a-512
 
-//ziv
-//https://ca.slack-edge.com/T7P4CAKAS-UP17FT59U-g660cee370b1-512
 let player
 let comp
+let gameover=false
 let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 let divs = document.getElementsByClassName("box")
 let igor = document.getElementById("igor")
@@ -39,6 +36,7 @@ function game() {
     computerturn()
 }
 function computerturn() {
+    if (!gameover){
     let guess = Math.floor(Math.random() * 9)
     while (!arr.includes(guess)) {
         guess = Math.floor(Math.random() * 9)
@@ -52,7 +50,11 @@ function computerturn() {
         divs[guess].removeEventListener("click", game)
         win(comp)
     }
-    else alert("Tie Game Over")
+    else {
+        alert("Tie Game Over")
+        newgame()
+    }
+}
 }
 function win(winner) {
     if (
@@ -70,5 +72,28 @@ function win(winner) {
         for (let i = 0; i < divs.length; i++) {
             divs[i].removeEventListener("click", game)
         }
+        gameover = true
+        newgame()
     }
+}
+function newgame(){
+    let loose = document.createElement("button")
+    loose.setAttribute("class", "button");
+    loose.innerHTML = "Play Again"
+    console.log(loose);
+    document.getElementById("container").appendChild(loose)
+    loose.addEventListener("click", start)
+}
+function start() {
+  document.getElementsByTagName("button")[0].remove()
+  gameover = false
+  player = null
+  comp = null
+  arr = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  arr.forEach(e=>{
+      divs[e].classList.remove("igor")
+      divs[e].classList.remove("ziv")
+    })
+  ziv.addEventListener("click", playerziv);
+  igor.addEventListener("click", playerigor);
 }

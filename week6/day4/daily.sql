@@ -14,8 +14,9 @@ insert into items (name,price) values ('book',70),('bike',150),('light',13),('ca
 insert into orders (item_id,amount,customer_id) values (1,16,1),(2,12,1),(3,2,1),(4,60,1),(5,3,2),(2,2,2),(3,7,3),(4,4,3),(5,2,3);
 
 SELECT
-   name, amount * price as total
+   customer_id, sum(amount * price) as total
 FROM
     items
 INNER JOIN orders
-    ON orders.item_id = items.item_id;
+    ON orders.item_id = items.item_id
+	group by orders.customer_id;

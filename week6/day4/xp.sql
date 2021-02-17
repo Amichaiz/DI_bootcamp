@@ -28,7 +28,7 @@ select first_name ||' '|| last_name as "full name" from  employees
 Write a query to get the first name, last name and the length of the full name of all the employees from employees table.
 select first_name ||' '|| last_name as "full name",length(first_name ||''|| last_name) from  employees
 Write a query to check whether the first_name column of the employees table containing any number.
-thats a type thing when you create the table tried to serch got an error that string isnt a number
+thats a type thing... when you create the table tried to serch got an error that string isnt a number
 Write a query to select first ten records from a table.
 select first_name from  employees
 fetch first 10 row only;
