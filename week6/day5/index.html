@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" type="text/css" href="todolist.css">
+</head>
+<body>
+    <div id="container">
+        <input id="name" type="text" placeholder="Name" required>
+        <input id="description" type="text" placeholder="Description">
+        <input id="starttime" type="datetime-local" required>
+        <input id="endtime" type="datetime-local" required>
+        <button id="add" type="submit">ADD</button>
+        <button id="clear">clear</button>
+        <a href="graph.html"><button id="graph">GRAPH</button></a>
+    </div>
+    <div id="list"></div>
+    <script type="text/Javascript" src="todolist.js"></script>
+</body>
+</html>

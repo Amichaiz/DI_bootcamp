@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph</title>
+    <style>
+        body{
+            background-image: url("https://i.pinimg.com/originals/fc/ca/f8/fccaf85518526560f0a2f34dbeb8c42c.jpg");
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let a = localStorage.getItem('item') || "Not Found";
+        all=(JSON.parse(a));
+        all.forEach(e => {
+            let last = new Date(e.endtime.slice(0,4),e.endtime.slice(5,7)-1,e.endtime.slice(8,10), e.endtime.slice(11,13), e.endtime.slice(14,16))
+            let first = new Date(e.starttime.slice(0,4),e.starttime.slice(5,7)-1,e.starttime.slice(8,10), e.starttime.slice(11,13), e.endtime.slice(14,16))
+            let diff = last - first;
+            console.log('diff',diff);
+            let days = diff / (1000 * 60 * 60 * 24);
+            console.log(days);
+            
+        });   
+        
+    </script>
+</body>
+</html>

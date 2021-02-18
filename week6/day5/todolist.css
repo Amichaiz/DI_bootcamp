@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(152, 217, 255);
+}
+#container{
+    display: flex;
+    justify-content: center;
+    padding:10px;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 15px;
+}
+button{
+    transition-duration: 0.4s;
+	cursor: pointer;	
+}
+button:hover {
+  background-color: #abffea;
+}
+#graph{
+    font-size: 20px;
+}
+.box{
+    border: rgb(42, 90, 42) solid 1px;
+    padding: 10px;
+}
+    
