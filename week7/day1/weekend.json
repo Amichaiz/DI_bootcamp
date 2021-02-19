@@ -1,0 +1,13 @@
+{
+    "name": "node-js",
+    "version": "1.0.0",
+    "description": "Node JS",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Akkaraju Satvik",
+    "license": "ISC"
+  }
+
+  npm install <@scope>/<name>
