@@ -1,12 +1,13 @@
 const axios = require('axios').default;
 
 const robouser = async () =>{
-    axios.get("https://jsonplaceholder.typicode.com/users")
-    .then(function (response) {
-        // handle success
-        console.log(response);
-      })
+    try {
+        const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+        return(response.data);
+      } catch (error) {
+        console.error(error);
+      }  
 }
 module.exports ={
-    robouser 
+    user: robouser 
 }
