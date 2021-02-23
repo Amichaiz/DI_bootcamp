@@ -9,7 +9,7 @@ fs.readFile('./xp.txt', (err,data) => {
         console.log(data.toString());
     }
 })
-
+/*
 //exercise 2
 
 const data='writing to a file'
@@ -32,4 +32,4 @@ fs.unlink('./exer2.txt', err => {
     if(err){
         console.log(err);
     }
-})
+})*/
