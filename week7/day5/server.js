@@ -8,7 +8,8 @@ app.use('/', exp.static(__dirname + '/public'));
 //app.get('/action/:id', function (req, res) {
 // console.log(req.params); 
 app.get('/action',async function (req, res) {
-    let id;
+    let id=1035580585;//fix this
+    /*
     console.log(req.query);
     let name = req.query.name
     let userid = {
@@ -23,9 +24,11 @@ app.get('/action',async function (req, res) {
     await axios.request(userid).then(function (response) {
         console.log(response.data);
         id = JSON.parse(response.data.user_id);
+        console.log(id +"this is the iiiiiiiiiiiiiiiiiiiiiiidddddddddddddddddddddddddddddd");
     }).catch(function (error) {
         console.error(error);
     })
+    */
     //get followers
     
     let followers = {
