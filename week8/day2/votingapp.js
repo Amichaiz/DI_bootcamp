@@ -12,9 +12,7 @@ class App extends React.Component {
       score4: 0
   }
 }
-
-  render() {
-    
+  render() {   
     return (
       <>
         <Lang score={this.state} />
