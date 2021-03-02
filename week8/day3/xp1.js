@@ -13,8 +13,10 @@ class App extends React.Component {
       this.setState({color:'yellow'})
     }, 5000);
   }
-  shouldComponentUpdate(){
-    //we were told not to do
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(nextProps, nextState);
+    console.log(this.props, this.state);
+    return false;  
   }
   blue =()=>{
     this.setState({color:'Blue'})
