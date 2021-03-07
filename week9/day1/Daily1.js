@@ -1,6 +1,5 @@
 import React from 'react';
 import countries from './components/countries';
-import contries from './components/countries'
 
 class Daily1 extends React.Component {
     constructor() {
@@ -14,11 +13,12 @@ class Daily1 extends React.Component {
         const value = e.target.value;
         this.setState({ [e.target.name]: value })
         console.log(e.target.value);
-        this.setState({contriesleft:countries.filter(word => word.toLocaleLowerCase().includes(e.target.value))})
+        this.setState({contriesleft:countries.filter(word =>(word.charAt(0).toLowerCase()===e.target.value.charAt(0))&&(word.toLocaleLowerCase().includes(e.target.value)))})
         console.log(this.state.contriesleft);
     }
     fill = (e) => {
         document.getElementById('contry').value=e.target.innerHTML
+        this.setState({contriesleft: [],title: ''})
     }
        
     render() {
@@ -37,4 +37,4 @@ class Daily1 extends React.Component {
     }
 }
 
-export default Daily1; 
+export default Daily1;  
