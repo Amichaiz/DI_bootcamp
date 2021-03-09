@@ -41,7 +41,6 @@ render(){
   <MovieList />
   <h1>movie </h1>
   <MovieDetails item={chose} />
-  
   </>
   )
 }
